@@ -15,12 +15,12 @@ class CreateTutorialTable extends Migration
     {
         Schema::create('tutorial', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('id_users','tutorial_users_id')
+            $table->foreign('id_users','tutorial_users_id')
             ->references('id')
                 ->on('users')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
-            $table->unsignedBigInteger('id_art','tutorial_art_id')
+            $table->foreign('id_art','tutorial_art_id')
             ->references('id')
                 ->on('art')
                 ->onDelete('restrict')

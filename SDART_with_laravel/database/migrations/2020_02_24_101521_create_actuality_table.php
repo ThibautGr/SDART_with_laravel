@@ -21,12 +21,12 @@ class CreateActualityTable extends Migration
             $table->text('linkImgDeux');
             $table->text('linkImgTrois');
             $table->string('title',50);
-            $table->unsignedBigInteger('id_users','actuality_users_id')
+            $table->foreign('id_users','actuality_users_id')
             ->references('id')
                 ->on('users')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
-            $table->unsignedBigInteger('id_art','art_actuality_id')
+            $table->foreign('id_art','art_actuality_id')
             ->references('id')
                 ->on('art')
                 ->onDelete('restrict')
