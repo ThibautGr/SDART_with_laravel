@@ -18,8 +18,8 @@ class CreateTutorialTable extends Migration
             $table->unsignedBigInteger('id_users')->unique();
             $table->unsignedBigInteger('id_art')->unique();
             $table->string('title',100);
-            $table->string('description');
-            $table->string('support');
+            $table->text('description');
+            $table->text('support');
             $table->timestamps();
         });
     }

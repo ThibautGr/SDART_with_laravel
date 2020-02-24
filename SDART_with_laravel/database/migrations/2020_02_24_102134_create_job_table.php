@@ -19,9 +19,9 @@ class CreateJobTable extends Migration
             $table->unsignedBigInteger('id_country')->unique();
             $table->string('title',100);
             $table->decimal('retributionYear',11,2);
-            $table->string('studyLevelSkill');
-            $table->string('description');
-            $table->string('linkImgUn');
+            $table->text('studyLevelSkill');
+            $table->text('description');
+            $table->text('linkImgUn');
             $table->dateTime('forWhen');
             $table->timestamps();
         });

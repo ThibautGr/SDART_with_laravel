@@ -16,10 +16,10 @@ class CreateActualityTable extends Migration
         Schema::create('actuality', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title',50);
-            $table->string('description');
-            $table->string('linkImgUn');
-            $table->string('linkImgDeux');
-            $table->string('linkImgTrois');
+            $table->text('description');
+            $table->text('linkImgUn');
+            $table->text('linkImgDeux');
+            $table->text('linkImgTrois');
             $table->string('title',50);
             $table->unsignedBigInteger('id_users')->unique();
             $table->unsignedBigInteger('id_art')->unique();

@@ -20,9 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('pseudo',50);
             $table->string('inconLink',150);
             $table->string('password',50);
-            $table->string('description');
-            $table->int('artPratice');
-            $table->int('levelAdminUser',1);
+            $table->text('description');
+            $table->integer('artPratice');
+            $table->integer('levelAdminUser',1);
             $table->string('mail',150)->unique();
             $table->string('entreprise',150)->nullable();
             $table->unsignedBigInteger('id_country')->unique();

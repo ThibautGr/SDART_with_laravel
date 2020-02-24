@@ -17,8 +17,8 @@ class CreateArtTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('id_typeart')->unique();
             $table->string('title',50);
-            $table->string('description');
-            $table->string('linkImg');
+            $table->text('description');
+            $table->text('linkImg');
             $table->unsignedBigInteger('id_users')->unique();
             $table->timestamps();
         });
