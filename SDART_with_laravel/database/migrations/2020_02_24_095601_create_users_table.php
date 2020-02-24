@@ -25,7 +25,11 @@ class CreateUsersTable extends Migration
             $table->integer('levelAdminUser',1);
             $table->string('mail',150)->unique();
             $table->string('entreprise',150)->nullable();
-            $table->unsignedBigInteger('id_country')->unique();
+            $table->foreign('id_country','country_user_id')
+            ->references('id')
+                ->on('country')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
             $table->timestamps();
 
         });
