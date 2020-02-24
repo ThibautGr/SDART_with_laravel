@@ -21,16 +21,16 @@ class CreateUsersTable extends Migration
             $table->string('inconLink',150);
             $table->string('password',50);
             $table->text('description');
-            $table->integer('id_typeart')->unsigned();
+            $table->bigInteger('id_typeart')->unsigned();
             $table->foreign('id_typeart','users_typeart_id')
             ->references('id')
                 ->on('typeart')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
-            $table->integer('levelAdminUser');
+            $table->bigInteger('levelAdminUser');
             $table->string('mail',150)->unique();
             $table->string('entreprise',150)->nullable();
-            $table->integer('id_country')->unsigned();
+            $table->bigInteger('id_country')->unsigned();
             $table->foreign('id_country','country_user_id')
             ->references('id')
                 ->on('country')

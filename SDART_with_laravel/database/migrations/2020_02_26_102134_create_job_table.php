@@ -15,11 +15,13 @@ class CreateJobTable extends Migration
     {
         Schema::create('job', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('id_users')->unsigned();
             $table->foreign('id_users','job_users_id')
             ->references('id')
                 ->on('users')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
+            $table->bigInteger('id_country')->unsigned();
             $table->foreign('id_country','job_country_id')
                 ->references('id')
                 ->on('country')

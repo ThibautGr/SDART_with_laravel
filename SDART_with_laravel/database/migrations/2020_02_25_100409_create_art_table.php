@@ -15,6 +15,7 @@ class CreateArtTable extends Migration
     {
         Schema::create('art', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('id_typeart')->unsigned();
             $table->foreign('id_typeart','art_typeart_id')
             ->references('id')
                 ->on('typeart')
@@ -23,6 +24,7 @@ class CreateArtTable extends Migration
             $table->string('title',50);
             $table->text('description');
             $table->text('linkImg');
+            $table->bigInteger('id_users')->unsigned();
             $table->foreign('id_users','art_users_id')
             ->references('id')
                 ->on('users')

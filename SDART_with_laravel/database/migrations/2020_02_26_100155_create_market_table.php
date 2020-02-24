@@ -15,11 +15,13 @@ class CreateMarketTable extends Migration
     {
         Schema::create('market', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('id_users')->unsigned();
             $table->foreign('id_users','mrkt_users_id')
                 ->references('id')
                 ->on('users')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
+            $table->bigInteger('id_product')->unsigned();
             $table->foreign('id_product','mrkt_art_id')
                 ->references('id')
                 ->on('art')
@@ -27,7 +29,8 @@ class CreateMarketTable extends Migration
                 ->onUpdate('restrict');
             $table->decimal('price',8,2);
             $table->string('matiereSupport',150);
-            $table->integer('quantityAvailable');
+            $table->bigInteger('quantityAvailable');
+            $table->bigInteger('id_country')->unsigned();
             $table->foreign('id_country','mrkt_country_id')
                 ->references('id')
                 ->on('country')
