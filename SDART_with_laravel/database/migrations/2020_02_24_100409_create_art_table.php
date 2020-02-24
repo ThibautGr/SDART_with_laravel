@@ -15,11 +15,19 @@ class CreateArtTable extends Migration
     {
         Schema::create('art', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('id_typeart')->unique();
+            $table->foreign('id_typeart','art_typeart_id')
+            ->references('id')
+                ->on('typeart')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
             $table->string('title',50);
             $table->text('description');
             $table->text('linkImg');
-            $table->unsignedBigInteger('id_users')->unique();
+            $table->foreign('id_users','art_users_id')
+            ->references('id')
+                ->on('users')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
             $table->timestamps();
         });
     }
