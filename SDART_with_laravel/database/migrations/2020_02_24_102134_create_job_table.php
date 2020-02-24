@@ -16,7 +16,11 @@ class CreateJobTable extends Migration
         Schema::create('job', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('id_users')->unique();
-            $table->unsignedBigInteger('id_country')->unique();
+            $table->foreign('id_country','job_country_id')
+                ->references('id')
+                ->on('country')
+                ->onUpdate('restrict')
+                ->onDelete('restrict');
             $table->string('title',100);
             $table->decimal('retributionYear',11,2);
             $table->text('studyLevelSkill');
