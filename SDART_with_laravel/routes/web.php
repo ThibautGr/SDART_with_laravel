@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/userInscription/','UserInscription@getFromInscriptionUser');
+Route::post('/userInscription/','UserInscription@sandUser');
+
