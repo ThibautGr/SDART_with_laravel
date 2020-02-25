@@ -507,8 +507,12 @@ border-right: none;
         width: 5rem;
     }
 }
+/* h1 page title */
+#emploititle{
+    text-align: center;
+}
 /* card page Job */
-.card-text:last-child {
+.card-text,.card-title,.card-link{
     margin-bottom: 0;
     color: black;
 }
@@ -556,11 +560,3 @@ border-right: none;
     color:white;
     text-decoration:none;
     }
-/* Search option page Job */
-.container-fluid {
-    width: 100%;
-    padding-right: 30px;
-    padding-left: 30px;
-    margin-right: auto;
-    margin-left: 450px;
-}

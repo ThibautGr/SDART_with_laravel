@@ -254,3 +254,80 @@ function passWordHAS() {
 
 // phase 3 modifier le type d'input
 // ph 3.1 modifier l'oeuil pour qu'il soit ouvert
+
+
+/* Trieur d'image dans la page Job
+/*systhème HIDE&SHOW */
+/*la on faire le selecteur d'id qui cache et revele suivant le selecteur qu'ont a choisit */
+$("document").ready(function(){
+    /*dans le cas ou l'on clique sur hideAndShow Tous */
+    $(".hideAndShowProTous").click(function(){
+        $(this).addClass('AACTIVE');
+        $(".hideAndShowPropContrat").removeClass("AACTIVE");
+        $(".hideAndShowPropFreeLance").removeClass("AACTIVE");
+        $(".hideAndShowPropPermanent").removeClass("AACTIVE");
+        $(".hideAndShowPropOther").removeClass("AACTIVE");
+        $(".HdSPropContrat").fadeIn("slow");
+        $(".HdSPropFreeLance").fadeIn("slow"); // rajoue de la classe fadeout("slow") ajouter une animation de transition
+        $(".HdSPropPermanent").fadeIn("slow");
+        $(".HdSPropOther").fadeIn("slow");
+
+    },)
+    /*CAS hideAndShow Permanent */
+    $(".hideAndShowPropPermanent").click(function(){
+        $(this).addClass('AACTIVE');
+        $(".hideAndShowPropTous").removeClass("AACTIVE");
+        $(".hideAndShowPropContrat").removeClass("AACTIVE");
+        $(".hideAndShowPropFreeLance").removeClass("AACTIVE");
+        $(".hideAndShowPropOther").removeClass("AACTIVE");
+        $(".HdSPropPermanent").fadeIn("slow");
+        /*les 3 autre posibilité son cacher des que l'on clic que hideAndShow Permanent */
+        $("HdSPropContrat").fadeOut("slow");
+        $(".HdSPropFreeLance").fadeOut("slow");
+        $(".HdSPropOther").fadeOut("slow");
+
+    },)
+    /*CAS hideAndShow Contrat*/
+    $(".hideAndShowPropContrat").click(function(){
+        $(this).addClass('AACTIVE');
+        $(".hideAndShowPropPermanent").removeClass("AACTIVE");
+        $(".hideAndShowPropFreeLance").removeClass("AACTIVE");
+        $(".hideAndShowPropTous").removeClass("AACTIVE");
+        $(".hideAndShowPropOther").removeClass("AACTIVE");
+        $(".HdSPropContrat").fadeIn("slow");
+        /*les 3 autre posibilité son cacher des que l'on clic que hideAndShow Contrat */
+        $(".HdSPropPermanent").fadeOut("slow");
+        $(".HdSPropFreeLance").fadeOut("slow");
+        $(".HdSPropOther").fadeOut("slow");
+
+    },)
+    /*CAShideAndShowProp FreeLance*/
+        $(".hideAndShowPropFreeLance").click(function(){
+        $(this).addClass('AACTIVE');
+        $(".hideAndShowPropPermanent").removeClass("AACTIVE");
+        $(".hideAndShowPropContrat").removeClass("AACTIVE");
+        $(".hideAndShowPropTous").removeClass("AACTIVE");
+        $(".hideAndShowPropOther").removeClass("AACTIVE");
+        $(".HdSPropFreeLance").fadeIn("slow");
+        /*les 3 autre posibilité son cacher des que l'on clic que hideAndShow FreeLance */
+        $(".HdSPropPermanent").fadeOut("slow");
+        $(".HdSPropContrat").fadeOut("slow");
+        $(".HdSPropOther").fadeOut("slow");
+
+    },)
+
+    /*CAShideAndShowProp Other*/
+    $(".hideAndShowPropOther").click(function(){
+        $(this).addClass('AACTIVE');
+        $(".hideAndShowPropPermanent").removeClass("AACTIVE");
+        $(".hideAndShowPropContrat").removeClass("AACTIVE");
+        $(".hideAndShowPropTous").removeClass("AACTIVE");
+        $(".hideAndShowPropFreeLance").removeClass("AACTIVE");
+        $(".HdSPropOther").fadeIn("slow");
+        /*les 3 autre posibilité son cacher des que l'on clic que hideAndShow Other */
+        $(".HdSPropPermanent").fadeOut("slow");
+        $(".HdSPropContrat").fadeOut("slow");
+        $(".HdSPropFreeLance").fadeOut("slow");
+
+    },)
+});
