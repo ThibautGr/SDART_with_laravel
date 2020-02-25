@@ -33,6 +33,12 @@ class CreateJobTable extends Migration
             $table->text('description');
             $table->text('linkImgUn');
             $table->dateTime('forWhen');
+            $table->bigInteger('id_contrat')->unsigned();
+            $table->foreign('id_contrat','job_contrat_id')
+                ->references('id')
+                ->on('contrats')
+                ->onUpdate('restrict')
+                ->onDelete('restrict');
             $table->timestamps();
         });
     }
