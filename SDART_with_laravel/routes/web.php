@@ -15,10 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/job/', function () {
+    return view('page.job');
+});
 Route::get('/userInscription/','UserInscription@getFromInscriptionUser');
 Route::post('/userInscription/','UserInscription@sandUser');
 
 
-Route::get('/job/', function () {
-    return view('page.job');
-});
+Route::get('/userInscription/','TypeArtController@GetAllTypeArtWService');
