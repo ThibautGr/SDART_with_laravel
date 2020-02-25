@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../resources/style/style.css">
     <script src="https://kit.fontawesome.com/0ad3f97360.js" crossorigin="anonymous"></script>
     <title>S-DART</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body >
 <!------------------header pareil à toutes les pages---------------->
@@ -87,7 +89,7 @@
                 <a id="" class="hideAndShowArt3D dropdown-item" hh4ref="#">3D</a>
             </div>
         </div>
-        <a class=" col-2" title="retour vers accueil" href="#"> Job</a>
+        <a class=" col-2" title="retour vers accueil" href="{{url('job')}}"> Job</a>
         <!-- dropdown fin-->
         <a class=" col-2" title="retour vers accueil" href="#"> Market</a>
         <a class=" col-2" title="retour vers accueil" href="#"> Leçon</a>
