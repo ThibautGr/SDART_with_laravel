@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model {
-    
+class Typeart extends Model
+{
+    protected $table='typeart';
 }
