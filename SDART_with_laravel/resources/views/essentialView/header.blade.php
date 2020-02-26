@@ -84,9 +84,9 @@
         <div class="dropdown col-2">
             <a  href="#" class="btn btn-secondary dropdown-toggle  artChangeur" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > Arts</a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a id="" class="hideAndShowpageArtGraphique dropdown-item" href="#">graphique</a>
-                <a id="" class="hideAndShowArtdigital dropdown-item" href="#">digital</a>
-                <a id="" class="hideAndShowArt3D dropdown-item" hh4ref="#">3D</a>
+            @foreach ($typeart as $tart)
+            <a id="" class="dropdown-item" href="{{url('typeart/'.$tart->id)}}">{{$tart->name}}</a>
+            @endforeach
             </div>
         </div>
         <a class=" col-2" title="retour vers accueil" href="{{url('job')}}"> Job</a>

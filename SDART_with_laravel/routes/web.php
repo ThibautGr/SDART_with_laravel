@@ -22,4 +22,4 @@ Route::get('/userInscription/','UserInscription@getFromInscriptionUser');
 Route::post('/userInscription/','UserInscription@sandUser');
 
 
-Route::get('/userInscription/','TypeArtController@GetAllTypeArtWService');
+Route::get('/typeart/' , 'TypeArtController@TypeArtList');

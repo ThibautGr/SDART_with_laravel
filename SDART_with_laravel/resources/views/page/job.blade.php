@@ -11,20 +11,12 @@
                 <div class="form-group col-md-4">
                     <label for="exampleFormControlSelect1">Type de Poste</label>
                     <select class="form-control" id="exampleFormControlSelect1">
-                    <option>Tous</option>
-                    <option>Permanent</option>
-                    <option>Contrat</option>
-                    <option>Free lance</option>
-                    <option>Other</option>
+                    <option><a class=" col-1 waves-effect filter hideAndShowPropTous" data-rel="Tous">Tous</a></option>
+                    <option><a class=" col-1 waves-effect filter hideAndShowPropPermanent" data-rel="1">Permanent</a></option>
+                    <option><a class=" col-1 waves-effect filter hideAndShowPropContrat"  data-rel="2">Contrat</a></option>
+                    <option><a class=" col-1 waves-effect filter hideAndShowPropFreeLance"  data-rel="3">Free Lance</a></option>
+                    <option><a class=" col-1 waves-effect filter hideAndShowPropOther" data-rel="4">Other</a></option>
                     </select>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label class="form-check-label" for="inlineCheckbox1">Travail à distance</label>
-                </div>
-                    <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">Aide à la mobilité</label>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="exampleFormControlSelect1">Pays</label>
