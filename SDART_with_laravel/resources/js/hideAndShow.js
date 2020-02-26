@@ -17,8 +17,8 @@ $("document").ready(function(){
         $("#pageArt3D").addClass("d-none");
         $("#pageMarket").addClass("d-none");
         $("#pageLecon").addClass("d-none");
-        $("#pagejOB").addClass("d-none");  
-        $("#pageArtDigital").addClass("d-none"); 
+        $("#pagejOB").addClass("d-none");
+        $("#pageArtDigital").addClass("d-none");
     },)
     /* fin page inscription */
     /*page accueil */
@@ -56,7 +56,7 @@ $("document").ready(function(){
         $(".artChangeur").text("Arts");
         $("#pageArtGraphique").addClass("d-none");
         $("#pageLecon").addClass("d-none");
-        $("#pagejOB").addClass("d-none");   
+        $("#pagejOB").addClass("d-none");
         $("#pageArtDigital").addClass("d-none");
     },)
         /* fin page actualité */
@@ -74,7 +74,7 @@ $("document").ready(function(){
         $("#pageArt3D").addClass("AACTIVE").addClass("d-none");
         $("#pageMarket").addClass("d-none");
         $("#pageLecon").addClass("d-none");
-        $("#pagejOB").addClass("d-none");   
+        $("#pagejOB").addClass("d-none");
         $("#pageContact").addClass("d-none");
         $("#pageAccueil").addClass("d-none");
         $("#pageActualite").addClass("d-none");
@@ -93,7 +93,7 @@ $("document").ready(function(){
         $("#pageArt3D").addClass("d-none");
         $("#pageMarket").addClass("d-none");
         $("#pageLecon").addClass("d-none");
-        $("#pagejOB").addClass("d-none");   
+        $("#pagejOB").addClass("d-none");
         $("#pageContact").addClass("d-none");
         $("#pageAccueil").addClass("d-none");
         $("#pageActualite").addClass("d-none");
@@ -112,7 +112,7 @@ $("document").ready(function(){
         $("#pageArtDigital").addClass("d-none");
         $("#pageMarket").addClass("d-none");
         $("#pageLecon").addClass("d-none");
-        $("#pagejOB").addClass("d-none");   
+        $("#pagejOB").addClass("d-none");
         $("#pageContact").addClass("d-none");
         $("#pageAccueil").addClass("d-none");
         $("#pageActualite").addClass("d-none");
@@ -126,8 +126,8 @@ hideAndShowConnecter
 si le bouton
 hideAndShowConnecteur
 est cliqué
-et enlevé 
-le d-none de hAsConnecter 
+et enlevé
+le d-none de hAsConnecter
 */
 $("document").ready(function(){
     $("#connextionShow").click(function(){
@@ -195,7 +195,7 @@ $("document").ready(function(){
     text-decoration: none;
     border-bottom: 2px solid #13aff0;
      */
-//plug in affiche ton MDP 
+//plug in affiche ton MDP
 $("document").ready(function(){
     $("#eyes").click(function()
     {
@@ -246,7 +246,7 @@ function passWordHAS() {
         y.className.replace ('fa-eye' );
     } else {
         x.type = "password";
-        y.className.replace ('fa-eye-slash' );  
+        y.className.replace ('fa-eye-slash' );
     }
 }
 */
@@ -330,4 +330,16 @@ $("document").ready(function(){
         $(".HdSPropFreeLance").fadeOut("slow");
 
     },)
+});
+
+$('#userlevel').change(function(){
+    if($(this).val() === "3"){
+        ($("#entreprise").removeClass("d-none"));
+    }
+    if($(this).val() === "1"){
+        ($("#entreprise").addClass("d-none"));
+    }
+    if($(this).val() === "2"){
+        ($("#entreprise").addClass("d-none"));
+    }
 });

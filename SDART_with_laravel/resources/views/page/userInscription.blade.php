@@ -59,7 +59,7 @@
             </div>
          @enderror
 
-      @error('iconLink')
+      @error('inconLink')
             <div  class="col-md-12 alert alert-danger form-control alert-dismissible fade show" role="alert">
                 <i class="fas fa-exclamation-circle" style="color: red;"></i>
                 {{$message}}
@@ -73,12 +73,12 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="pseudo">pseudo</label>
-                    <input type="text" class="form-control" id="pseudo" placeholder="pseudo" name="pseudo">
+                    <input type="text" class="form-control" value="{{old('pseudo')}}" id="pseudo" placeholder="pseudo" name="pseudo">
                 </div>
                 <div class="form-group  col-md-6">
                     <label class="" for="inputGroupFile01">Your profil picture</label>
                     <div class="custom-file ">
-                        <input type="file" class="custom-file-input" name="iconLink" id="inputGroupFile01"
+                        <input type="file" class="custom-file-input" name="inconLink" id="inputGroupFile01"
                                aria-describedby="inputGroupFileAddon01">
                         <label class="custom-file-label btn-primary btn" for="inputGroupFile01">Choose file</label>
                     </div>
@@ -88,31 +88,30 @@
 <!--inpute et alert art pratice-->
             <div class="form-group ">
                 <p>what kind of art do you practice ? </p>
-
+                @foreach($allTypeArt as $typeArt )
+                    <label id="{{$typeArt->id}}">{{$typeArt->name}}</label>
+                    <input type="radio" name="id_typeart"  id="{{$typeArt->id}}" value="{{$typeArt->id}}">
+                @endforeach
                 <div class=" form-check-inline form-check ">
-                        @foreach($allTypeArt as $typeArt )
-                            <label id="{{$typeArt->id}}">{{$typeArt->name}}</label>
-                            <input type="checkbox" name="artPratice"  id="{{$typeArt->id}}" value="{{$typeArt->id}}">
-                        @endforeach
-
                 </div>
             </div>
 <!-- fin inpute et alert art pratice-->
 <!--  inpute levelAdminUser et alert art description-->
-                <?php/* if(!empty($validationError["user.levelAdminUser"])){
-            */?>
+
+
+                @error('levelAdminUser')
                 <div class="col-md-12 alert alert-danger form-control alert-dismissible fade show" role="alert">
 
                     <i class="fas fa-exclamation-circle" style="color: red;"></i>
                     <strong>
-                        <?php// echo $validationError["user.levelAdminUser"]; ?>
+                    {{$message}}
                     </strong>
                     <i class="fas fa-exclamation-circle" style="color: red;"></i>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <i class="fas fa-window-close"></i>
                     </button>
                 </div>
-                <?php// } ?>
+                @enderror()
                 <div class="form-group ">
                     <label  for="userlevel">You are ? or, you represented ?</label>
                     <select name="levelAdminUser" class="form-control custom-select mr-sm-2" id="userlevel">
@@ -126,21 +125,106 @@
                     <label for="enterprise">your compagny name</label>
                     <input id="enterprise" type="text" class="form-control" name="entreprise" placeholder="the name of your compagny">
                 </div>
-                <?php if(!empty($validationError["user.description"])){
-                ?>
+                @error('description')
                 <div  class="col-md-12 alert alert-danger form-control alert-dismissible fade show" role="alert">
 
                     <i class="fas fa-exclamation-circle" style="color: red;"></i>
-                    <strong>
-                        <?php echo $validationError["user.description"]; ?>
-                    </strong>
+                        {{$message}}
                     <i class="fas fa-exclamation-circle" style="color: red;"></i>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <i class="fas fa-window-close"></i>
                     </button>
                 </div>
-                <?php } ?>
-            <button type="submit" value="submit" class="btn btn-primary">Sign in</button>
+                @enderror
+                <div class="form-group">
+                    <label for="inputAddress">description</label>
+                    <textarea name="description"  class="form-control"  id="inputAddress" rows="3" placeholder="Fiew word about you..."></textarea>
+                </div>
+                <div class="form-group" >
+<!--fin  inpute levelAdminUser et alert art description-->
+<!--inpute idCountry et alert art Email-->
+                   @error('idCountry')
+                    <div  class="col-md-12 alert alert-danger form-control alert-dismissible fade show" role="alert">
+
+                        <i class="fas fa-exclamation-circle" style="color: red;"></i>
+                        <strong>
+                            {{$message}}
+                        </strong>
+                        <i class="fas fa-exclamation-circle" style="color: red;"></i>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="fas fa-window-close"></i>
+                        </button>
+                    </div>
+                    @enderror
+                    <label for="country">Your Country </label>
+                    <select id="country" name="id_country" class="form-control custom-select mr-sm-2" >
+                        <option selected> Choose...</option>
+                    @foreach($allCountry as $country)
+                        <option value="{{$country->id}}">{{$country->name}}</option>
+                    @endforeach
+                    </select>
+<!--fin  inpute levelAdminUser et alert Country-->
+                    @error('password')
+                        <div class="col-md-12 alert alert-danger form-control alert-dismissible fade show" role="alert">
+                            <i class="fas fa-exclamation-circle" style="color: red;"></i>
+                            <strong>
+                                {{$message}}
+                            </strong>
+                            <i class="fas fa-exclamation-circle" style="color: red;"></i>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="fas fa-window-close"></i>
+                            </button>
+                        </div>
+                    @enderror
+                    <div class="form-group">
+                        <label for="inputAddress">Email</label>
+                        <input type="text" class="form-control" value="{{old('mail')}}" id="inputAddress" placeholder="monmail@maboitemail.extentions" name="mail">
+                    </div>
+<!---Alert password--->
+                    @error('password')
+                        <div class="col-md-12 alert alert-danger form-control alert-dismissible fade show" role="alert">
+                            <i class="fas fa-exclamation-circle" style="color: red;"></i>
+                            <strong>
+                                {{$message}}
+                            </strong>
+                            <i class="fas fa-exclamation-circle" style="color: red;"></i>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="fas fa-window-close"></i>
+                            </button>
+                        </div>
+                    @enderror
+                    <div class="form-group ">
+                        <label for="passWord">Mots de passe: </label>
+                        <div class="row roweyes">
+                            <input id="passWord" type="password" class="col-10 form-control text-left" id="inputAddress2" placeholder="password" name="password">
+                            <div class="btn-primary btn col-2"  onclick="passWordHAS()">
+                                <div id="eyes">
+                                    <i  class="far fa-eye hideAndShowEyes"></i>
+                                </div>
+                                <div id="eyesBlink">
+                                    <i class="far fa-eye-slash d-none hideAndShowEyesBlink"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- on work-->
+                    <div class="form-group ">
+                        <label for="passWordConf">confirmation du Mots de passe: </label>
+                        <div class="row roweyes">
+                            <input id="passWordConf" type="password" class="col-10 form-control text-left" name="password_confirmation"  placeholder="password">
+                            <div class="col-2 btn-primary btn"  onclick="passWordHAS2()">
+                                <div id="eyes2">
+                                    <i  class="far fa-eye hideAndShowEye2s"></i>
+                                </div>
+                                <div id="eyesBlink2">
+                                    <i class="far fa-eye-slash d-none hideAndShowEyesBlink2"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!---fin Alert password--->
+
+                    <button type="submit" value="submit" class="btn btn-primary">Sign in</button>
         </form>
     </div>
 

@@ -155,6 +155,24 @@
                 <textarea name="description" class="form-control"  id="inputAddress" rows="3" placeholder="Fiew word about you..."></textarea>
             </div>
             <div class="form-group" >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <?php if(!empty($validationError["user.idCountry"])){
                 ?>
                 <div  class="col-md-12 alert alert-danger form-control alert-dismissible fade show" role="alert">
@@ -194,6 +212,7 @@
                     </button>
                 </div>
                 <?php //} ?>
+
                 <div class="form-group">
                     <label for="inputAddress">Email</label>
                     <input type="text" class="form-control" id="inputAddress" placeholder="monmail@maboitemail.extentions" name="mail">
@@ -213,6 +232,43 @@
                     </button>
                 </div>
                 <?php// } ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <div class="form-group ">
                     <label for="inputAddress2">Mots de passe: </label>
                     <div class="row roweyes">
