@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\services\CountryService;
 use App\services\TypeArtService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 
 use App\Http\Controllers\Controller;
@@ -48,7 +49,7 @@ class UserInscription extends Controller
             $createUser->lastName = $request->lastName;
             $createUser->pseudo=$request->pseudo;
             $createUser->inconLink=$inconLink;
-            $createUser->password=$request->password;
+            $createUser->password=Hash::make($request['password']);
             $createUser->description=$request->description;
             $createUser->id_typeart=$request->id_typeart;
             $createUser->levelAdminUser=$request->levelAdminUser;

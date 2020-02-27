@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/job/', function () {
     return view('page.job');
@@ -37,4 +34,5 @@ Route::middleware('auth')->group(function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/','AccueilController@GetAllTypeArtACountryWSerivce');
