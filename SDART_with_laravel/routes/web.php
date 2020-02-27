@@ -24,6 +24,7 @@ Route::post('/userInscription/','UserInscription@sandUser');
 
 Route::get('/typeart/' , 'TypeArtController@TypeArtList');
 Route::get('/userInscription/','UserInscription@GetAllTypeArtACountryWSerivce');
+Route::get('/typeart/{id}' , 'TypeArtController@TypeArtList');
 
 //service auth
 Route::middleware('auth')->group(function () {
@@ -38,3 +39,5 @@ Route::middleware('auth')->group(function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+

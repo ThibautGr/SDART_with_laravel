@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../resources/style/style.css">
+    <link rel="stylesheet" href="{{ URL::asset('style/style.css') }}">
     <script src="https://kit.fontawesome.com/0ad3f97360.js" crossorigin="anonymous"></script>
     <title>S-DART</title>
     <!-- Font Awesome -->
@@ -22,7 +22,7 @@
     <nav class=" navbar firsnavbar">
         <!--logo-->
         <div class="col-3 hideAndShowAccueil">
-            <a href="#"  class="undeco"><img src="../resources/img/logoNatif/Station_d_artiste_full_size_logo.png"></a>
+            <a href="#"  class="undeco"><img src="{{ URL::asset('img/logoNatif/Station_d_artiste_full_size_logo.png')}}"></a>
         </div>
         <!----->
         <!-- Search form -->

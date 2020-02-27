@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('lastName',50);
             $table->string('pseudo',50);
             $table->string('inconLink',150);
-            $table->string('password',50);
+            $table->string('password',255);
             $table->text('description');
             $table->bigInteger('id_typeart')->unsigned();
             $table->foreign('id_typeart','users_typeart_id')
