@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
             $table->bigInteger('levelAdminUser');
-            $table->string('mail',150)->unique();
+            $table->string('email',150)->unique();
             $table->string('entreprise',150)->nullable();
             $table->bigInteger('id_country')->unsigned();
             $table->foreign('id_country','country_user_id')

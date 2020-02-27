@@ -30,28 +30,29 @@
         <!---------------------------------->
         <!-- boutique, connextion, inscription-->
         <div class="col-3 esapce">
-            <div id="hAsConnecterUno">
-                <a title="" class="hideAndShowMyShop " href="#"> <i class="fas fa-shopping-cart undeco"> (0)</i></a>
-                <a title=""  href="{{url('userInscription')}}" class="" >S'inscire</a>
-                <a title="" href="#" class="  btn btn-primary"  data-toggle="modal" data-target=".bd-connextion-modal-sm"> <i class="fas fa-sign-in-alt"></i>Ce connecter</a>
-            </div>
-            <div id="hAsConnecter" class="d-none row rowconnecter">
                 <!--écran vous etes connecter-->
                 <!--menu backDOWN profil-->
-                <a title="" class="hideAndShowMyShop " href="#"> <i class="fas fa-shopping-cart undeco"> (0)</i></a>
-
-                <div class="dropdown">
-                    <a  class=" undeco dropdown-toggle" id="dropdownMenuCo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"> Heagle Row <img class=" logoConnecter" src="img/profil/profil.jpg"></a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuCo">
-                        <a id="" class=" dropdown-item" href="#">Mes message(s) (0)</a>
-                        <a id="" class=" dropdown-item" href="#">mon profile</a>
-                        <a id="DeConnextionShow" class=" dropdown-item" href="#">Ce deconnecter</a>
-                    </div>
-                </div>
-                <!--écran vous etes connecter-->
+                @if (Route::has('login'))
+                    @auth
+                        < class="dropdown">
+                        <a title="" class="hideAndShowMyShop " href="#"> <i class="fas fa-shopping-cart undeco"> (0)</i></a>
+                        <a  class=" undeco dropdown-toggle" id="dropdownMenuCo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"> Heagle Row <img class=" logoConnecter" src="img/profil/profil.jpg"></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuCo">
+                            <a id="" class=" dropdown-item" href="#">Mes message(s) (0)</a>
+                            <a id="" class=" dropdown-item" href="#">mon profile</a>
+                            <a id="DeConnextionShow" class=" dropdown-item" href="#">Ce deconnecter</a>
+                        </div>
+                    @else
+                        <a title="" class="hideAndShowMyShop " href="#"> <i class="fas fa-shopping-cart undeco"> (0)</i></a>
+                        @if (Route::has('register'))
+                            <a title=""  href="{{url('userInscription')}}" class="" >S'inscire</a>
+                        @endif
+                        <a title="" href="#" class="  btn btn-primary"  data-toggle="modal" data-target=".bd-connextion-modal-sm"> <i class="fas fa-sign-in-alt"></i>Ce connecter</a>
+                    @endauth
+                @endif
             </div>
-        </div>
     </nav>
+
     <!---MODAL CE CONNECTER-->
     <div class="modal fade bd-connextion-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
@@ -76,6 +77,7 @@
             </div>
         </div>
     </div>
+
     <!---------------second zone nav 2------------------->
     <nav class="nav seconNavbar ">
         <a class="hideAndShowAccueil col-2 show active fade  AACTIVE" title="retour vers accueil" href="#"> Accueil</a>

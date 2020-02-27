@@ -25,4 +25,16 @@ Route::post('/userInscription/','UserInscription@sandUser');
 Route::get('/typeart/' , 'TypeArtController@TypeArtList');
 Route::get('/userInscription/','UserInscription@GetAllTypeArtACountryWSerivce');
 
+//service auth
+Route::middleware('auth')->group(function () {
+    Route::get('/', function ()    {
+        // Réservé aux utilisateurs authentifiés
+    });
+    Route::get('comptes', function () {
+        // Réservé aux utilisateurs authentifiés
+    });
+});
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

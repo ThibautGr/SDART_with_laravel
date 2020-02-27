@@ -88,9 +88,9 @@
 <!--inpute et alert art pratice-->
             <div class="form-group ">
                 <p>what kind of art do you practice ? </p>
-                @foreach($allTypeArt as $typeArt )
-                    <label id="{{$typeArt->id}}">{{$typeArt->name}}</label>
-                    <input type="radio" name="id_typeart"  id="{{$typeArt->id}}" value="{{$typeArt->id}}">
+                @foreach($typeart as $typeAr )
+                    <label id="{{$typeAr->id}}">{{$typeAr->name}}</label>
+                    <input type="radio" name="id_typeart"  id="{{$typeAr->id}}" value="{{$typeAr->id}}">
                 @endforeach
                 <div class=" form-check-inline form-check ">
                 </div>
@@ -178,7 +178,7 @@
                     @enderror
                     <div class="form-group">
                         <label for="inputAddress">Email</label>
-                        <input type="text" class="form-control" value="{{old('mail')}}" id="inputAddress" placeholder="monmail@maboitemail.extentions" name="mail">
+                        <input type="text" class="form-control" value="{{old('email')}}" id="inputAddress" placeholder="monmail@maboitemail.extentions" name="email">
                     </div>
 <!---Alert password--->
                     @error('password')
