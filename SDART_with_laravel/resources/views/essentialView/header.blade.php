@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!--favicon--->
-    <link rel="icon" type="image/png" href="../resources/img/logoNatif/logoSation_artist.png" />
+    <link rel="icon" type="image/png" href="{{ URL::asset('img/logoNatif/logoSation_artist.png') }}" />
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -37,10 +37,10 @@
                     <div class="dropdown show">
                         <?php $logoProfile = resource_path('img/imgIconeUser/'.Auth::user()->inconLink)?>
                         <a title="" class="hideAndShowMyShop " href="#"> <i class="fas fa-shopping-cart undeco"> (0)</i></a>
-                        <a  class=" undeco dropdown-toggle" id="dropdownMenuCo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"> {{Auth::user()->pseudo}} <img class=" logoConnecter" src="URL::asset('img/imgIconeUser/{{Auth::user()->inconLink}}')"></a>
+                        <a  class=" undeco dropdown-toggle" id="dropdownMenuCo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"> {{Auth::user()->pseudo}} <img class=" logoConnecter" src="{{ URL::asset('img/imgIconeUser/'.Auth::user()->inconLink.'') }} "></a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuCo">
                             <a id="" class=" dropdown-item" href="#">Mes message(s) (0)</a>
-                            <a id="" class=" dropdown-item" href="#">mon profile</a>
+                            <a id="" class=" dropdown-item" href="{{url('esapaceUserCo/'.Auth::user()->id)}}">mon profile</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -115,7 +115,7 @@
             <a  href="#" class="btn btn-secondary dropdown-toggle  artChangeur" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > Arts</a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             @foreach ($typeart as $tart)
-            <a id="" class="dropdown-item" href="{{url('typeart/'.$tart->id)}}">{{$tart->name}}</a>
+                <a id="" class="dropdown-item" href="{{url('typeart/'.$tart->id)}}">{{$tart->name}}</a>
             @endforeach
             </div>
         </div>

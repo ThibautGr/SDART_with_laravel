@@ -38,4 +38,6 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/','AccueilController@GetAllTypeArtACountryWSerivce');
 
+//Route::get('/esapaceUserCo/{$id}','userController@getUserByIdWService');
+Route::get('displaySpaceUser','userController@displaySpaceUser');
 
