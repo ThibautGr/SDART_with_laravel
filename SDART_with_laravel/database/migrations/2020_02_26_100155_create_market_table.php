@@ -15,14 +15,14 @@ class CreateMarketTable extends Migration
     {
         Schema::create('market', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_users')->unsigned();
-            $table->foreign('id_users','mrkt_users_id')
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id','mrkt_users_id')
                 ->references('id')
                 ->on('users')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
-            $table->bigInteger('id_product')->unsigned();
-            $table->foreign('id_product','mrkt_art_id')
+            $table->bigInteger('product_id')->unsigned();
+            $table->foreign('product_id','mrkt_art_id')
                 ->references('id')
                 ->on('art')
                 ->onDelete('restrict')
@@ -30,8 +30,8 @@ class CreateMarketTable extends Migration
             $table->decimal('price',8,2);
             $table->string('matiereSupport',150);
             $table->bigInteger('quantityAvailable');
-            $table->bigInteger('id_country')->unsigned();
-            $table->foreign('id_country','mrkt_country_id')
+            $table->bigInteger('country_id')->unsigned();
+            $table->foreign('country_id','mrkt_country_id')
                 ->references('id')
                 ->on('country')
                 ->onDelete('restrict')

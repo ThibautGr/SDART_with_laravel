@@ -15,14 +15,14 @@ class CreateJobTable extends Migration
     {
         Schema::create('job', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_users')->unsigned();
-            $table->foreign('id_users','job_users_id')
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id','job_users_id')
             ->references('id')
                 ->on('users')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
-            $table->bigInteger('id_country')->unsigned();
-            $table->foreign('id_country','job_country_id')
+            $table->bigInteger('country_id')->unsigned();
+            $table->foreign('country_id','job_country_id')
                 ->references('id')
                 ->on('country')
                 ->onUpdate('restrict')
@@ -33,8 +33,8 @@ class CreateJobTable extends Migration
             $table->text('description');
             $table->text('linkImgUn');
             $table->dateTime('forWhen');
-            $table->bigInteger('id_contrat')->unsigned();
-            $table->foreign('id_contrat','job_contrat_id')
+            $table->bigInteger('contrat_id')->unsigned();
+            $table->foreign('contrat_id','job_contrat_id')
                 ->references('id')
                 ->on('contrats')
                 ->onUpdate('restrict')
