@@ -17,7 +17,7 @@
                 <textarea id="description" name="description"></textarea>
                 <label for="linkImg">Oeuvre to publish</label>
                 <input id="linkImg" type="file" name="linkImg" value="">
-                <input type="hidden" value="<?php echo Auth::user()->id?>" name="id_users">
+                <input type="hidden" value="<?php echo Auth::user()->id?>" name="user_id">
                 <input type="hidden" value="<?php echo Auth::user()->id_typeart ?>" name="id_typeart">
                 <input type="submit" value="sand">
             </form>
@@ -33,5 +33,12 @@
             id_users
             --->
         @endauth
+
+        @foreach($artsUser as $art)
+            <h1>{{$art->description}}</h1>
+            <p>{{$art->description}}</p>
+            <img class=" " src="{{ URL::asset('img/allArt/'.$art->linkImg.'') }} ">
+        @endforeach
+
     @endif
 @endsection

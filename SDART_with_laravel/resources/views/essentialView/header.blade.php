@@ -39,7 +39,7 @@
                         <a  class=" undeco dropdown-toggle" id="dropdownMenuCo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"> {{Auth::user()->pseudo}} <img class=" logoConnecter" src="{{ URL::asset('img/imgIconeUser/'.Auth::user()->inconLink.'') }} "></a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuCo">
                             <a id="" class=" dropdown-item" href="#">Mes message(s) (0)</a>
-                            <a id="" class=" dropdown-item" href="{{url('/displaySpaceUser/')}}">mon profile</a>
+                            <a id="" class=" dropdown-item" href="{{url('/displaySpaceUser/'.Auth::user()->id)}}">mon profile</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">

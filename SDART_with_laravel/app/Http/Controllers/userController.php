@@ -7,6 +7,8 @@ use App\User;
 use DemeterChain\A;
 use Illuminate\Http\Request;
 use App\Art;
+use Illuminate\Support\Facades\DB;
+
 class userController extends Controller
 {
    /* public function getUserByIdWService($id,TypeArtService $typeArtService){
@@ -16,9 +18,10 @@ class userController extends Controller
              return view('page.esapaceUserCo',compact('user','typeArt'));
     }*/
 
-    public function displaySpaceUser(TypeArtService $typeArtService){
+    public function displaySpaceUser(TypeArtService $typeArtService,$id){
+        $artsUser = User::find($id)->art;
         $typeart = $typeArtService->getAllTypeArt();
-        return view('page.esapaceUserCo',compact('typeart'));
+        return view('page.esapaceUserCo',compact('typeart','artsUser'));
     }
 
     public function registreArt(Request $request,TypeArtService $typeArtService){
@@ -37,7 +40,7 @@ class userController extends Controller
             $createArt -> title = $request->title;
             $createArt->description=$request->description;
             $createArt->linkImg=$linkImg;
-            $createArt->id_users = $request->id_users;
+            $createArt->user_id = $request->user_id;
             $createArt->id_typeart=$request->id_typeart;
             $createArt->save();
         }
@@ -51,7 +54,8 @@ class userController extends Controller
     */
     function getArtfromUser($id){
         $artsUser = User::find($id)->art;
-        return view('page.getArtByUser',['artsUser'=>$artsUser]);
+
+        return view('page.getArtByUser',compact('artsUser'));
     }
 
 

@@ -39,7 +39,7 @@ Auth::routes();
 Route::get('/','AccueilController@GetAllTypeArtACountryWSerivce');
 
 //Route::get('/esapaceUserCo/{$id}','userController@getUserByIdWService');
-Route::get('displaySpaceUser','userController@displaySpaceUser');
+Route::get('displaySpaceUser/{id}','userController@displaySpaceUser');
 Route::post('displaySpaceUser','userController@registreArt');
 Route::get('getArtByUser/{id}','userController@getArtfromUser');
 
