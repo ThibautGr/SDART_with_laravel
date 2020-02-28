@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\services\CountryService;
 use App\services\TypeArtService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 
 use App\Http\Controllers\Controller;
@@ -12,12 +13,13 @@ use Illuminate\Validation\ValidationException;
 class UserInscription extends Controller
 {
     public function GetAllTypeArtACountryWSerivce(TypeArtService $typeArtService,CountryService $countryService){
-        $allTypeArt = $typeArtService->getAllTypeArt();
+        $typeart = $typeArtService->getAllTypeArt();
         $allCountry = $countryService->getAllCountry();
-        return view('page/userInscription', compact('allCountry', 'allTypeArt'));
+        return view('page/userInscription', compact('allCountry', 'typeart'));
     }
 
     public function getFromInscriptionUser(){
+
         return view('page/userInscription');
     }
 
@@ -31,7 +33,7 @@ class UserInscription extends Controller
             'description'=>'required|string|min:20|max:500',
             'id_typeart'=>'required',
             'levelAdminUser'=>'required',
-            'mail'=>'required|string|email|max:255|unique:users',
+            'email'=>'required|string|email|max:255|unique:users',
             'entreprise'=>'min:2|max:50|alpha_dash|nullable',
             'id_country'=>'required'
         ];
@@ -47,11 +49,11 @@ class UserInscription extends Controller
             $createUser->lastName = $request->lastName;
             $createUser->pseudo=$request->pseudo;
             $createUser->inconLink=$inconLink;
-            $createUser->password=$request->password;
+            $createUser->password=Hash::make($request['password']);
             $createUser->description=$request->description;
             $createUser->id_typeart=$request->id_typeart;
             $createUser->levelAdminUser=$request->levelAdminUser;
-            $createUser->mail=$request->mail;
+            $createUser->email=$request->email;
             $createUser->entreprise=$request->entreprise;
             $createUser->id_country=$request->id_country;
             $createUser->save();

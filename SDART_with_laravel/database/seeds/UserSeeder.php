@@ -19,7 +19,7 @@ class UserSeeder extends Seeder {
             $user->id_typeart = $faker->randomDigitNot(4,5,6,7,8,9);
             $user->id_country = $faker->randomDigit;
             $user->pseudo = $faker->unique()->firstName;
-            $user->mail = $faker->unique()->email;
+            $user->email = $faker->unique()->email;
             $user->password =$faker->password;
             $user->description = $faker->text;
             $user->entreprise = $faker->company;

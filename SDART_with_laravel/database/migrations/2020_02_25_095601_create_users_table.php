@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('lastName',50);
             $table->string('pseudo',50);
             $table->string('inconLink',150);
-            $table->string('password',50);
+            $table->string('password',255);
             $table->text('description');
             $table->bigInteger('id_typeart')->unsigned();
             $table->foreign('id_typeart','users_typeart_id')
@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
             $table->bigInteger('levelAdminUser');
-            $table->string('mail',150)->unique();
+            $table->string('email',150)->unique();
             $table->string('entreprise',150)->nullable();
             $table->bigInteger('id_country')->unsigned();
             $table->foreign('id_country','country_user_id')
