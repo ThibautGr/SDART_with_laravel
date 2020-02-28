@@ -37,6 +37,7 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/','AccueilController@GetAllTypeArtACountryWSerivce');
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 //service auth
@@ -51,6 +52,11 @@ Route::middleware('auth')->group(function () {
 
 Auth::routes();
 =======
+//Route::get('/esapaceUserCo/{$id}','userController@getUserByIdWService');
+Route::get('displaySpaceUser','userController@displaySpaceUser');
+>>>>>>> master
+=======
+
 //Route::get('/esapaceUserCo/{$id}','userController@getUserByIdWService');
 Route::get('displaySpaceUser','userController@displaySpaceUser');
 >>>>>>> master
