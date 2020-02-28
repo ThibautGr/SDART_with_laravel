@@ -8,6 +8,9 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable {
 
+    public function art(){
+        return $this->hasMany('App\Art');
+    }
     //protected $table='users';
 
     use Notifiable;
@@ -35,5 +38,6 @@ class User extends Authenticatable {
      *
      * @var array
      */
+
 
 }
