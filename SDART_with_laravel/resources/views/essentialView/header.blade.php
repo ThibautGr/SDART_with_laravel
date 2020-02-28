@@ -35,25 +35,11 @@
             @if (Route::has('login'))
                 @auth
                     <div class="dropdown show">
-                        <?php $logoProfile = resource_path('img/imgIconeUser/'.Auth::user()->inconLink)?>
                         <a title="" class="hideAndShowMyShop " href="#"> <i class="fas fa-shopping-cart undeco"> (0)</i></a>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        <a  class=" undeco dropdown-toggle" id="dropdownMenuCo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"> {{Auth::user()->pseudo}} <img class=" logoConnecter" src="URL::asset('img/imgIconeUser/{{Auth::user()->inconLink}}')"></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuCo">
-                            <a id="" class=" dropdown-item" href="#">Mes message(s) (0)</a>
-                            <a id="" class=" dropdown-item" href="#">mon profile</a>
-=======
-=======
->>>>>>> master
                         <a  class=" undeco dropdown-toggle" id="dropdownMenuCo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"> {{Auth::user()->pseudo}} <img class=" logoConnecter" src="{{ URL::asset('img/imgIconeUser/'.Auth::user()->inconLink.'') }} "></a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuCo">
                             <a id="" class=" dropdown-item" href="#">Mes message(s) (0)</a>
-                            <a id="" class=" dropdown-item" href="{{url('esapaceUserCo/'.Auth::user()->id)}}">mon profile</a>
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
+                            <a id="" class=" dropdown-item" href="{{url('/displaySpaceUser/')}}">mon profile</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -83,7 +69,6 @@
                         @csrf
                         <div class="form-group ">
                             <label for="email">votre Identifiant</label>
-
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                             @error('email')
@@ -121,7 +106,7 @@
 
     <!---------------second zone nav 2------------------->
     <nav class="nav seconNavbar ">
-        <a class="hideAndShowAccueil col-2 show active fade  AACTIVE" title="retour vers accueil" href="{{url('accueil')}}"> Accueil</a>
+        <a class="hideAndShowAccueil col-2 show active fade  AACTIVE" title="retour vers accueil" href="{{url('/')}}"> Accueil</a>
         <a class="hideAndShowActualite col-2" title="voir les dernieres actu" href="#"> Actualité</a>
         <!-- dropdown-->
         <div class="dropdown col-2">
