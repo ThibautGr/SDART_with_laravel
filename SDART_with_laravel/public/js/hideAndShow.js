@@ -343,3 +343,4 @@ $('#userlevel').change(function(){
         ($("#entreprise").addClass("d-none"));
     }
 });
+

@@ -79,7 +79,7 @@ padding: 0.8rem;
     top : 0;
     margin-top : 0;
     z-index : 800 ;
-    background-color: #101010  ; 
+    background-color: #101010  ;
 }
 .seconNavbar .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
     padding-right: 0;
@@ -99,10 +99,10 @@ padding: 0.8rem;
     box-shadow: none;
 }
 /*je vais parler au show du second nav pour désactivé l'ombre du backdown*/
-.seconNavbar .show a{ 
+.seconNavbar .show a{
         text-align: start;
 }
-.seconNavbar .show a:hover{ 
+.seconNavbar .show a:hover{
     text-align: start;
     color: #13aff0;
     background-color: #101010;
@@ -212,6 +212,7 @@ padding: 0.8rem;
     background-color: #222222;
 
 }
+
 .footer-card {
     padding: 0;
     padding-bottom: 0.5rem ;
@@ -228,12 +229,12 @@ padding: 0.8rem;
     color: #ffffff;
     background-color: #171717;
     padding: 0.5rem;
-    border-radius: 5%;  
+    border-radius: 5%;
     border-bottom: none;
 }
 .rowLastLeason{
     margin: 0rem;
-    padding: 1rem 0 1rem 0;  
+    padding: 1rem 0 1rem 0;
 }
 .shadowBody{
     opacity: 70%;
@@ -252,7 +253,7 @@ padding: 0.8rem;
 /*zone card job*/
 .rowLasJob{
     margin: 0rem;
-    padding: 0;  
+    padding: 0;
 }
 .cardjob {
     margin: 1rem;
@@ -268,7 +269,7 @@ padding: 0.8rem;
 }
 .rowNewsLetters{
     padding: 3rem 0 3rem 0;
-    margin: 3rem 0 3rem 0; 
+    margin: 3rem 0 3rem 0;
 }
 .inputeNewsletter{
 background-color: #101010;
@@ -408,7 +409,7 @@ border-right: none;
     background-color: #171717;
     padding:  0 3rem 5rem 3rem;
     border-top-left-radius: calc(0px - 0px);
-    border-top-right-radius: calc(0px - 0px); 
+    border-top-right-radius: calc(0px - 0px);
 }
 
 .imgProfile{
@@ -418,6 +419,11 @@ border-right: none;
 
 .linkArt{
     color: #13aff0;
+}
+.card-title{
+    background-color: #171717 ;
+    opacity: 0.5;
+    color: #ffffff;
 }
 /*
 /*fin de la page art graphique*/
@@ -436,12 +442,12 @@ border-right: none;
     border: none;
 }
 /* Extra small devices (portrait phones, less than 576px)*/
-@media (max-width: 575.98px) { 
+@media (max-width: 575.98px) {
     .formnewleter{
         display: flex;
         padding-top: 0rem;
         padding-left:0rem ;
-    
+
     }
     /*page artGraphique*/
     .bgGrey{
@@ -460,7 +466,7 @@ border-right: none;
     width: 4rem;
 }
 /* Small devices (landscape phones, less than 768px)*/
-@media (max-width: 767.98px) { 
+@media (max-width: 767.98px) {
     .formnewleter{
         display: flex;
         padding-top: 0rem;
@@ -476,7 +482,7 @@ border-right: none;
     }
 }
 /* Medium devices (tablets, less than 992px)*/
-@media (max-width: 991.98px) { 
+@media (max-width: 991.98px) {
     .formnewleter{
         display: flex;
         padding-top: 0rem;
@@ -491,8 +497,9 @@ border-right: none;
         width: 4rem;
     }
 }
+
 /* Large devices (desktops, less than 1200px)*/
-@media (max-width: 1199.98px) { 
+@media (max-width: 1199.98px) {
     .formnewleter{
         display: flex;
         padding-top: 0rem;
@@ -511,11 +518,8 @@ border-right: none;
 #emploititle{
     text-align: center;
 }
-/* card page Job */
-.card-text,.card-title,.card-link{
-    margin-bottom: 0;
-    color: black;
-}
+
+
 /*Search bar page Job*/
 .searchbar{
     margin-bottom: auto;

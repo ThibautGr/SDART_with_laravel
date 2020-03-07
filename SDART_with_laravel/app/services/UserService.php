@@ -2,6 +2,7 @@
 
 
 namespace App\services;
+
 use App\User;
 
 class UserService
@@ -12,4 +13,12 @@ class UserService
     public function getallUser(){
         return User::all();
     }
+
+
+        public function getUserByIdArt($id){
+            return User::where('typeart_id', $id)
+                ->orderBy('created_at', 'desc')
+                ->get();
+        }
+
 }

@@ -13,6 +13,7 @@ class User extends Authenticatable {
     }
     //protected $table='users';
 
+
     use Notifiable;
 
     /**
@@ -21,7 +22,7 @@ class User extends Authenticatable {
      * @var array
      */
     protected $fillable = [
-        'firstName','lastName', 'pseudo','inconLink','password','description','id_typeart','levelAdminUser','email','entreprise', 'password',
+        'firstName','lastName', 'pseudo','inconLink','password','description','typeart_id','levelAdminUser','email','entreprise', 'country_id',
     ];
 
     /**

@@ -90,7 +90,7 @@
                 <p>what kind of art do you practice ? </p>
                 @foreach($typeart as $typeAr )
                     <label id="{{$typeAr->id}}">{{$typeAr->name}}</label>
-                    <input type="radio" name="id_typeart"  id="{{$typeAr->id}}" value="{{$typeAr->id}}">
+                    <input type="radio" name="typeart_id"  id="{{$typeAr->id}}" value="{{$typeAr->id}}">
                 @endforeach
                 <div class=" form-check-inline form-check ">
                 </div>
@@ -157,7 +157,7 @@
                     </div>
                     @enderror
                     <label for="country">Your Country </label>
-                    <select id="country" name="id_country" class="form-control custom-select mr-sm-2" >
+                    <select id="country" name="country_id" class="form-control custom-select mr-sm-2" >
                         <option selected> Choose...</option>
                     @foreach($allCountry as $country)
                         <option value="{{$country->id}}">{{$country->name}}</option>
@@ -225,6 +225,7 @@
 <!---fin Alert password--->
 
                     <button type="submit" value="submit" class="btn btn-primary">Sign in</button>
+          </div>
         </form>
     </div>
 

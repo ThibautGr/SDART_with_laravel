@@ -31,11 +31,11 @@ class UserInscription extends Controller
             'inconLink'=>'bail|image|required|dimensions:min_width=100,min_height=200',
             'password'=>'required|string|min:6|confirmed',
             'description'=>'required|string|min:20|max:500',
-            'id_typeart'=>'required',
+            'typeart_id'=>'required',
             'levelAdminUser'=>'required',
             'email'=>'required|string|email|max:255|unique:users',
             'entreprise'=>'min:2|max:50|alpha_dash|nullable',
-            'id_country'=>'required'
+            'country_id'=>'required'
         ];
 
         $request->validate($rules);
@@ -43,7 +43,7 @@ class UserInscription extends Controller
 
         if($request->hasfile('inconLink')){
             $inconLink = time().'.'.$request->inconLink->extension();
-            $request->inconLink->move(resource_path('/img/imgIconeUser'), $inconLink);
+            $request->inconLink->move(public_path('/img/imgIconeUser'), $inconLink);
             $createUser = new User;
             $createUser->firstName = $request->firstName;
             $createUser->lastName = $request->lastName;
@@ -51,11 +51,11 @@ class UserInscription extends Controller
             $createUser->inconLink=$inconLink;
             $createUser->password=Hash::make($request['password']);
             $createUser->description=$request->description;
-            $createUser->id_typeart=$request->id_typeart;
+            $createUser->typeart_id=$request->typeart_id;
             $createUser->levelAdminUser=$request->levelAdminUser;
             $createUser->email=$request->email;
             $createUser->entreprise=$request->entreprise;
-            $createUser->id_country=$request->id_country;
+            $createUser->country_id=$request->country_id;
             $createUser->save();
         }
 

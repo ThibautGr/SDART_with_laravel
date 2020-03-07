@@ -24,8 +24,9 @@ class userController extends Controller
         return view('page.esapaceUserCo',compact('typeart','artsUser'));
     }
 
-    public function registreArt(Request $request,TypeArtService $typeArtService){
+    public function registreArt(Request $request,TypeArtService $typeArtService,$id){
         $typeart = $typeArtService->getAllTypeArt();
+        $artsUser = User::find($id)->art;
         $rules = [
             'title'=>'bail|required|min:2|max:50|alpha_dash',
             'description'=>'bail|required|min:2|max:2000|alpha_dash',
@@ -41,10 +42,10 @@ class userController extends Controller
             $createArt->description=$request->description;
             $createArt->linkImg=$linkImg;
             $createArt->user_id = $request->user_id;
-            $createArt->id_typeart=$request->id_typeart;
+            $createArt->typeart_id=$request->typeart_id;
             $createArt->save();
         }
-        return view('page.esapaceUserCo',compact('typeart'));
+        return view('page.esapaceUserCo',compact('artsUser','typeart'));
     }
 
     /*    function getCommentsFromContact($id){
@@ -53,6 +54,7 @@ class userController extends Controller
     }
     */
     function getArtfromUser($id){
+
         $artsUser = User::find($id)->art;
 
         return view('page.getArtByUser',compact('artsUser'));
