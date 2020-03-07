@@ -36,11 +36,13 @@ Route::middleware('auth')->group(function () {
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/','AccueilController@GetAllTypeArtACountryWSerivce');
+Route::get('/','AccueilController@getlastTenArt');
 
 //Route::get('/esapaceUserCo/{$id}','userController@getUserByIdWService');
 Route::get('displaySpaceUser/{id}','userController@displaySpaceUser');
-Route::post('displaySpaceUser','userController@registreArt');
+Route::post('displaySpaceUser/{id}','userController@registreArt');
 Route::get('getArtByUser/{id}','userController@getArtfromUser');
+
+Route::get('pageOfArt/{id}','artController@getArtById');
 
 
