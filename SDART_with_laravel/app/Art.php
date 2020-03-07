@@ -12,4 +12,7 @@ class Art extends Model
         return $this->belongsTo('App\Typeart');
     }
 
+    public function user(){
+        return $this->hasOne('App\User');
+    }
 }

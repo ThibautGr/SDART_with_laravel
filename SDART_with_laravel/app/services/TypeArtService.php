@@ -7,4 +7,7 @@ class TypeArtService
     public function getAllTypeArt(){
         return Typeart::all();
     }
+    public function typeArtBid($id){
+        return Typeart::find($id);
+    }
 }

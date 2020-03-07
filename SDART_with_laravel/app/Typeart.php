@@ -11,4 +11,6 @@ class TypeArt extends Model
     public function art(){
         return $this->hasMany('App\Art');
     }
+
+
 }
