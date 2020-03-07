@@ -19,7 +19,7 @@
 <!--navbar Fixed TEST-->
 <script src="{{ URL::asset('js/hideAndShow.js')}}"></script>
 <script src="{{ URL::asset('js/lastLeasonModificator.js')}}"></script>
-<script src="{{ URL::asset('js/galery.js')}}"></script>
+<script src="{{ URL::asset('js/spaceUser.js')}}"></script>
 <!-- Optional JavaScript -->
 <script>
     /*crée une fonction qui prend l'id du bouton */

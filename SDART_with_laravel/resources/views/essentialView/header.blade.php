@@ -9,11 +9,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ URL::asset('style/style.css') }}">
     <script src="https://kit.fontawesome.com/0ad3f97360.js" crossorigin="anonymous"></script>
     <title>S-DART</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ URL::asset('style/style.css') }}">
 </head>
 <body >
 <!------------------header pareil à toutes les pages---------------->
@@ -110,11 +110,17 @@
         <a class="hideAndShowActualite col-2" title="voir les dernieres actu" href="#"> Actualité</a>
         <!-- dropdown-->
         <div class="dropdown col-2">
-            <a  href="#" class="btn btn-secondary dropdown-toggle  artChangeur" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > Arts</a>
+            <a  href="#" class="btn btn-secondary dropdown-toggle  artChangeur" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                @if(!empty($TypeArtTitle))
+                    {{$TypeArtTitle->name}}
+                @else
+                    Arts
+                @endif</a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             @foreach ($typeart as $tart)
                 <a id="" class="dropdown-item" href="{{url('typeart/'.$tart->id)}}">{{$tart->name}}</a>
             @endforeach
+
             </div>
         </div>
         <a class=" col-2" title="retour vers accueil" href="{{url('job')}}"> Job</a>
