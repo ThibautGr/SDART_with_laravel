@@ -151,9 +151,9 @@ $("document").ready(function(){
         $(".hideAndShowPropGraphique").removeClass("AACTIVE");
         $(".hideAndShowProp3D").removeClass("AACTIVE");
         $(".hideAndShowPropdigital").removeClass("AACTIVE");
-        $(".HdSPropGraphique").fadeIn("slow");
-        $(".HdSPropDgital").fadeIn("slow"); // rajoue de la classe fadeout("slow") ajouter une animation de transition
-        $(".HdSProp3D").fadeIn("slow");
+        $(".1").fadeIn("slow");
+        $(".2").fadeIn("slow"); // rajoue de la classe fadeout("slow") ajouter une animation de transition
+        $(".3").fadeIn("slow");
     },)
     /*CAS hideAndShow graphique */
     $(".hideAndShowPropGraphique").click(function(){
@@ -161,10 +161,10 @@ $("document").ready(function(){
         $(".hideAndShowPropAll").removeClass("AACTIVE");
         $(".hideAndShowProp3D").removeClass("AACTIVE");
         $(".hideAndShowPropdigital").removeClass("AACTIVE");
-        $(".HdSPropGraphique").fadeIn("slow");
+        $(".1").fadeIn("slow");
         /*les 3 autre posibilité son cacher des que l'on clic que hideAndShow Graphique */
-        $("HdSPropDgital").fadeOut("slow");
-        $(".HdSProp3D").fadeOut("slow");
+        $(".2").fadeOut("slow");
+        $(".3").fadeOut("slow");
     },)
     /*CAS hideAndShow 3D*/
     $(".hideAndShowProp3D").click(function(){
@@ -172,10 +172,10 @@ $("document").ready(function(){
         $(".hideAndShowPropdigital").removeClass("AACTIVE");
         $(".hideAndShowPropGraphique").removeClass("AACTIVE");
         $(".hideAndShowPropAll").removeClass("AACTIVE");
-        $(".HdSProp3D").fadeIn("slow");
+        $(".3").fadeIn("slow");
         /*les 3 autre posibilité son cacher des que l'on clic que hideAndShow Graphique */
-        $(".HdSPropGraphique").fadeOut("slow");
-        $(".HdSPropDgital").fadeOut("slow");
+        $(".1").fadeOut("slow");
+        $(".2").fadeOut("slow");
     },)
     /*CAShideAndShowProp digital*/
         $(".hideAndShowPropdigital").click(function(){
@@ -183,10 +183,10 @@ $("document").ready(function(){
         $(".hideAndShowProp3D").removeClass("AACTIVE");
         $(".hideAndShowPropGraphique").removeClass("AACTIVE");
         $(".hideAndShowPropAll").removeClass("AACTIVE");
-        $(".HdSPropDgital").fadeIn("slow");
+        $(".2").fadeIn("slow");
         /*les 3 autre posibilité son cacher des que l'on clic que hideAndShow Graphique */
-        $(".HdSPropGraphique").fadeOut("slow");
-        $(".HdSProp3D").fadeOut("slow");
+        $(".1").fadeOut("slow");
+        $(".3").fadeOut("slow");
     },)
 });
 

@@ -43,6 +43,7 @@ Route::get('displaySpaceUser/{id}','userController@displaySpaceUser');
 Route::post('displaySpaceUser/{id}','userController@registreArt');
 Route::get('getArtByUser/{id}','userController@getArtfromUser');
 
+Route::get('displaySpaceOtherUser/{id}','artController@getOtherUserfromArt');
 Route::get('pageOfArt/{id}','artController@getArtById');
 
 
